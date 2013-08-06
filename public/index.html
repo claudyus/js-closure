@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+  <!--ul class="menu">
+    <li><a href="#/list">List Items</a></li>
+    <li><a href="#/add">Add Items</a></li>
+  </ul-->
+  <ul class="breadcrumb">
+    <li ng-class="{ 'active': route === 'add' }"><a href="#/add">Add</a></li>
+    <li ng-class="{ 'active': route === 'list' }"><a href="#/list">List Items</a></li>
+    <li class="active">Data</li>
+</ul>
+
+  <div ng-view></div>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.js"></script>
+  <script src="javascripts/app.js"></script>
+</body>
+</html>
