@@ -1,0 +1,35 @@
+<div class="container">
+
+  <h2>Lista todo attuale</h2>
+  <p>Stai guardando l'elemento {{ todoId }}</p>
+  <table class="table" style="width: 80%">
+    <thead>
+      <th>Numero</th>
+      <th>Descrizione</th>
+      <th>Elimina</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="todo in todoList" ng-style="{ 'background-color': todo.color }">
+        <td>{{ $index }}</td>
+        <td>{{ todo.desc }}</td>
+        <td ng-click="del($index)">Eliminami!</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Add TODO</h2>
+  <form novalidate>
+    Descrizione: <input type="text" ng-model="todo.desc" name="desc"/><br />
+    color:
+    <select ng-model="todo.color">
+      <option value="{{ color }}" ng-repeat="color in possibleColors">{{ color }}</option>
+    </select>
+    <button ng-click="add(todo)">Salva</button>
+  </form>
+
+  <!-- debug stuff -->
+  <button ng-click="debug = !debug">Mostra/Nascondi</button>
+  <pre ng-show="debug">form = {{user | json}}</pre>
+  <pre ng-show="debug">master = {{master | json}}</pre>
+
+</div>
